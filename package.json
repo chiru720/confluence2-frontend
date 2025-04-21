@@ -6,12 +6,16 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "api": "npx @openapitools/openapi-generator-cli generate -g typescript-axios -i api-docs/openapi.json -o src/api --global-property skipFormModel=false --additional-properties=enumPropertyNaming=original"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.10",
     "@radix-ui/react-slot": "^1.2.0",
+    "@tanstack/react-query": "^5.74.4",
+    "@tanstack/react-table": "^8.21.3",
     "autoprefixer": "^10.4.21",
+    "axios": "^1.8.4",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.488.0",
@@ -25,6 +29,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@openapitools/openapi-generator-cli": "^2.7.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",

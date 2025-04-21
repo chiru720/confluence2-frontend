@@ -37,6 +37,27 @@ export interface Document {
   isArchived: boolean;
 }
 
+export interface DocumentCreateRequest {
+  title: string;
+  content: string;
+  parentId?: string;
+  tags?: string[];
+  spaceId: string;
+  collaborators?: {
+    userId: string;
+    permissions: DocumentPermission[];
+  }[];
+}
+
+export interface DocumentUpdateRequest {
+  title?: string;
+  content?: string;
+  parentId?: string;
+  tags?: string[];
+  spaceId?: string;
+  isArchived?: boolean;
+}
+
 export interface DocumentVersion {
   id: string;
   documentId: string;
